@@ -1,0 +1,18 @@
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #eef5ff;
+}
+
+.actions a {
+  margin: 0 4px;
+}
+
+.btn-add {
+  background: var(--success);
+}
+.btn-add:hover {
+  background: #218838;
+}
