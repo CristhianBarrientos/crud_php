@@ -74,11 +74,9 @@ $marcas = $pdo->query("SELECT idMarca, marca FROM Marcas ORDER BY marca")
   <label for="existencia">Existencia:</label>
   <input id="existencia" type="number" name="existencia" value="<?= $prod['existencia'] ?>" required min="0" step="1">
 
-  <!-- ✅ Botón para actualizar -->
-  <button type="submit" class="btn btn-success">Actualizar</button>
+  <button type="submit" class="btn">Actualizar</button>
+  <a href="index.php" class="btn btn-secondary">Volver</a>
 
-  <!-- ✅ Botón para regresar al listado -->
-  <a href="index.php" class="btn">Volver</a>
 </form>
 
 </div>

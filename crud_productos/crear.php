@@ -2,7 +2,6 @@
 require 'conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recogemos y limpiamos los datos básicos
     $producto    = trim($_POST['producto'] ?? '');
     $idMarca     = (int)($_POST['idMarca'] ?? 0);
     $descripcion = trim($_POST['Descripcion'] ?? '');
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Para el combo de marcas
 $marcas = $pdo->query("SELECT idMarca, marca FROM Marcas ORDER BY marca")
               ->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -68,11 +66,10 @@ $marcas = $pdo->query("SELECT idMarca, marca FROM Marcas ORDER BY marca")
   <label for="existencia">Existencia:</label>
   <input id="existencia" type="number" name="existencia" required min="0" step="1">
 
-  <!-- ✅ Botón visible y estilizado -->
   <button type="submit" class="btn btn-success">Crear producto</button>
+  
+  <a href="index.php" class="btn btn-secondary">Volver</a>
 
-  <!-- Botón opcional para volver al listado -->
-  <a href="index.php" class="btn">Volver</a>
 </form>
 
 </div>
